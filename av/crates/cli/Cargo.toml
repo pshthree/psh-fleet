@@ -1,0 +1,12 @@
+[package]
+name = "pshav"
+description = "Command-line scanner and definition tooling for the pshav engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+pshav-engine = { path = "../engine" }
+clap = { version = "4", features = ["derive"] }
+serde_json = "1"
+walkdir = "2"

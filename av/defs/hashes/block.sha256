@@ -1,0 +1,3 @@
+# Blocked files. One per line: SHA-256 in hex, then an optional detection name.
+# Example:
+# 0000000000000000000000000000000000000000000000000000000000000000  Trojan.Example.A

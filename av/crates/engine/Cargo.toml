@@ -1,0 +1,26 @@
+[package]
+name = "pshav-engine"
+description = "Scan engine core: file typing, hash lists, YARA-X rules, bounded archive unpacking, signed definitions"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+base64 = "0.22"
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+flate2 = "1"
+hex = "0.4"
+rand_core = { version = "0.6", features = ["getrandom"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+thiserror = "2"
+yara-x = "1.23"
+# yara-x 1.23.0 was built against this rsa pre-release. rsa 0.10.0 final moved
+# Pkcs1v15Sign behind a feature yara-x doesn't enable, so the build breaks
+# without this pin. Remove it once yara-x ships a fix.
+rsa = "=0.10.0-rc.19"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+tempfile = "3"
